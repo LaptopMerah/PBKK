@@ -13,7 +13,7 @@
 <body class="bg-gray-100">
     <x-navbar />
     <x-header>{{ $title }}</x-header>
-    <main class="mx-auto my-6 max-w-screen-xl px-4 py-6 sm:px-6 lg:px-8 ">
+    <main class="mx-auto max-w-screen-xl p-4 sm:px-6 lg:px-8 ">
         {{ $slot }}
     </main>
     @vite('resources/js/app.js')
