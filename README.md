@@ -24,7 +24,6 @@ Pemrograman Berbasis Kerangka Kerja (D)<br>
       <img src="https://github.com/user-attachments/assets/b5be6320-342f-4436-9460-cb18f0ea441c" alt="Stuktur Folder" style="width: 30%;">
       <p>Stuktur Folder</p>
     </td>
-  <tr>
   </tr>
   <tr>
     <td align="center" width="50%">
@@ -48,6 +47,7 @@ Pemrograman Berbasis Kerangka Kerja (D)<br>
   </tr>
 </table>
 
+
 ## Pembelajaran Section 3
 * View Data<br>
     Belajar bagiamana cara mengimrimkan data dari router ke view yang lebih kompleks. Disini saya merubah dari Blog menjadi News, serta setiap card dan tampilannya saya sesuaikan sendiri.
@@ -68,6 +68,22 @@ Pemrograman Berbasis Kerangka Kerja (D)<br>
   </tr>
 </table>
 
+
+## Pembelajaran Section 4
+* Database & Migration<br>
+    Mengelola database kita. Membuat, rollback, dan mengelola perubahan pada database. 
+* Eloquent ORM & Post Model<br>
+    `Eloquent` merupakan sebuah object-relational mapper untuk mengelola database kita. Merubah Models News kita dengan cara yang benar. Menggunakan Route Model Binding yang memudahkan untuk mengirim semua data/instance sebuah model yang akan macth dengan id. Supaya models bisa mengisi data dari otomatis bisa menggunakan `fillable`, diaman field pada model yg boleh diisi, sedangkan `guarded` adalah field yang tidak boleh disii. `Tinker` yang memudahkan memodifikasi sebuah database.
+
+### Hasil pembelajaran section 4
+<table>
+  <tr>
+    <td align="center" width="50%" colspan="2">
+      <img src="https://github.com/user-attachments/assets/92581527-b3fa-4fd0-ad5f-71d0735dbe5f" alt="Database" style="width: 100%;">
+      <p>Database pada table News yang sudah terisi data</p>
+    </td>
+  </tr>
+</table>
 
 
 ## License
