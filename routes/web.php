@@ -16,10 +16,8 @@ Route::get('/news', function () {
     return view('news', ['title' => 'News', 'news' => News::all()]);
 });
 
-Route::get('/news/{slug}', function ($slug) {
-    $post = News::find($slug);
-
-    return view('news-post', ['title' => 'News Post', 'post' => $post]);
+Route::get('/news/{news:slug}', function (News $news) {
+    return view('news-post', ['title' => 'News Post', 'post' => $news]);
 
 });
 
