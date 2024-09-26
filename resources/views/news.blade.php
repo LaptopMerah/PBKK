@@ -1,12 +1,14 @@
 <x-layout>
     <x-slot:title>{{ $title }}</x-slot:title>
 
-    <div class="flex justify-between flex-wrap">
+    <div class="flex justify-between flex-wrap gap-4">
         @foreach ($news as $post)
             <article
                 class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <a href="/news/{{ $post['slug'] }}">
-                    <img class="rounded-t-lg" src={{ $post['image'] }} alt="" />
+                    <div class="relative" style="padding-top: 75%;">
+                        <img class="absolute top-0 left-0 w-full h-full rounded-t-lg object-cover" src="{{ $post['image'] }}" alt="" />
+                    </div>
                 </a>
                 <div class="p-5">
                     <a href="/news/{{ $post['slug'] }}">
