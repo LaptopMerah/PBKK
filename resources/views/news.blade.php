@@ -5,17 +5,23 @@
         @foreach ($news as $post)
             <article
                 class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                <a href="/news/{{ $post['slug'] }}">
+                <a href="/news/{{ $post->slug }}">
                     <div class="relative" style="padding-top: 75%;">
-                        <img class="absolute top-0 left-0 w-full h-full rounded-t-lg object-cover" src="{{ $post['image'] }}" alt="" />
+                        <img class="absolute top-0 left-0 w-full h-full rounded-t-lg object-cover" src="{{ $post->image }}" alt="" />
                     </div>
                 </a>
                 <div class="p-5">
-                    <a href="/news/{{ $post['slug'] }}">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $post['title'] }}</h5>
+                    <a href="/news/{{ $post->slug}}">
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $post->title }}</h5>
                     </a>
-                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 line-clamp-4">{{ $post['content'] }}</p>
-                    <a href="/news/{{ $post['slug'] }}"
+                    <div class="mb-3 font-normal text-gray-400 dark:text-gray-700">
+                        By
+                        <a href="/authors/{{ $post->user->name }}" class=" hover:underline">{{ $post->user->name }}</a>
+                        in
+                        <a href="/category/{{ $post->category->slug }}"  class=" hover:underline">{{ $post->category->type }}</a>
+                    </div>
+                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 line-clamp-4">{{ $post->content }}</p>
+                    <a href="/news/{{ $post->slug }}"
                         class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                         Read more
                         <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"

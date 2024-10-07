@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Category;
+use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -20,9 +22,11 @@ class NewsFactory extends Factory
         $title = fake()->sentence();
         return [
             'title' => $title,
+            'author_id' => User::factory(),
+            'category_id' => Category::factory(),
             'slug' => Str::slug($title),
             'image' => 'https://picsum.photos/400/300?random=2',
-            'content' => fake()->text(),
+            'content' => fake()->text(300),
         ];
     }
 }

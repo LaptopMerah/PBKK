@@ -1,11 +1,17 @@
 <x-layout>
     <x-slot:title>{{ $title }}</x-slot:title>
     <article class="max-w-screen-xl flex flex-col items-center gap-5">
-        <img class="max-w-sm rounded-lg" src={{ $post['image'] }} alt="" />
+        <img class="max-w-sm rounded-lg" src={{ $post->image }} alt="" />
+        <div class="text-lg py-1 px-2 bg-slate-300 rounded-md">
+            By
+            <a href="/authors/{{ $post->user->name }}"> {{ $post->user->name }} </a>
+            in
+            <a href="/category/{{ $post->category->slug }}"> {{ $post->category->type }}</a>
+        </div>
 
         <section class="bg-white border border-gray-200 p-5 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <div class="w-full flex gap-5 justify-between mb-5">
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $post['title'] }}</h5>
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $post->title }}</h5>
                 <a href="/news"
                     class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                     <svg class="rotate-180 rtl:rotate-0 w-3.5 h-3.5 me-2" aria-hidden="true"
@@ -16,7 +22,7 @@
                     Back to News
                 </a>
             </div>
-            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 line-clamp-4 text-justify">{{ $post['content'] }}</p>
+            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 line-clamp-4 text-justify">{{ $post->content }}</p>
         </section>
     </article>
 </x-layout>
