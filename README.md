@@ -85,6 +85,65 @@ Pemrograman Berbasis Kerangka Kerja (D)<br>
   </tr>
 </table>
 
+## Pembelajaran Section 5
+* Model Factories<br>
+  Membuat data data dummy dengan fitur Factory yang memudahkan kita supaya tidak membuat data satu persatu dari melalui TablePlus ataupun tinker.
+* Eloquent Relationship<br>
+  Membuat relasi dari setiap model yang kita punya. Dengan Elogquent memudahkan dalam mengelola dan menggunakan relations.
+* Post Category
+  Membuat Model category untuk posts dengan eleoquent relationship. Dan saya  membuat categorynya dengan Enums.
+* Database Seeder
+  Membuat seeder untuk memudahkan untuk membuat dummy data yang tidak menggunakan tinker lagi. Menjadi seperti dibawah:
+  ```php
+  namespace App;
+
+  enum CategoryType: string
+  {
+      case TECHNOLOGY = 'Technology';
+      case SPORTS = 'Sports';
+      case ENTERTAINMENT = 'Entertainment';
+      case HEALTH = 'Health';
+      case BUSINESS = 'Business';
+  }
+  ```
+  ```php
+  public function run(): void
+  {
+      $this->call([
+          UserSeeder::class,
+          CategorySeeder::class,
+      ]);
+      News::factory(100)
+          ->recycle(User::all())  // Recycle the users
+          ->recycle(Category::all())  // Recycle the categories
+          ->create();
+  }
+  ```
+
+### Hasil pembelajaran section 5
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <img src="https://github.com/user-attachments/assets/6eed706b-0abb-4ae0-849e-f0206fbbaf9e" alt="Route: '/news'" style="width: 100%;">
+      <p>News in Route: '/news'</p>
+    </td>
+    <td align="center" width="50%">
+      <img src="https://github.com/user-attachments/assets/26065f80-0367-4423-ae2f-8e5cbd231d97" alt="Route: '/news/{news:slug}'" style="width: 100%;">
+      <p>Detail News in Route: '/news/{news:slug}'</p>
+    </td>
+  </tr>
+   <tr>
+    <td align="center" width="50%">
+      <img src="https://github.com/user-attachments/assets/82504b2c-126a-47a0-871b-e10b5bd03c4f" alt="Route: '/authors/{user:username}'" style="width: 100%;">
+      <p>Sort News by authors in Route: '/authors/{user:username}'</p>
+    </td>
+    <td align="center" width="50%">
+      <img src="https://github.com/user-attachments/assets/c331f626-4f9c-434a-a76f-966d6c2c36c5" alt="Route: '/categories/{category:slug}'" style="width: 100%;">
+      <p>Sort News by category in Route: '/categories/{category:slug}'</p>
+    </td>
+  </tr>
+</table>
+
 
 ## License
 
