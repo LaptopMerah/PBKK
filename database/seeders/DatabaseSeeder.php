@@ -17,16 +17,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $users = User::factory(10)->create();
-        $categories = collect(CategoryType::cases())->map(function ($type) {
-            return Category::factory()->create([
-                'type' => $type->value,
-                'slug' => Str::slug($type->name),
-            ]);
-        });
+        $this->call([
+            UserSeeder::class,
+            CategorySeeder::class,
+        ]);
         News::factory(100)
-            ->recycle($users)  // Recycle the users
-            ->recycle($categories)  // Recycle the categories
+            ->recycle(User::all())  // Recycle the users
+            ->recycle(Category::all())  // Recycle the categories
             ->create();
     }
 }
