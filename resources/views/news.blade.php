@@ -14,11 +14,11 @@
                     <a href="/news/{{ $post->slug}}">
                         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $post->title }}</h5>
                     </a>
-                    <div class="mb-3 font-normal text-gray-400 dark:text-gray-700">
+                    <div class="mb-3 font-normal ">
                         By
-                        <a href="/authors/{{ $post->user->name }}" class=" hover:underline">{{ $post->user->name }}</a>
+                        <a href="/authors/{{ $post->user->username }}" class=" hover:underline text-gray-400 dark:text-gray-700">{{ $post->user->name }}</a>
                         in
-                        <a href="/category/{{ $post->category->slug }}"  class=" hover:underline">{{ $post->category->type }}</a>
+                        <a href="/categories/{{ $post->category->slug }}"  class=" hover:underline text-gray-400 dark:text-gray-700">{{ $post->category->type }}</a>
                     </div>
                     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 line-clamp-4">{{ $post->content }}</p>
                     <a href="/news/{{ $post->slug }}"

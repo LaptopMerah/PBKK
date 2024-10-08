@@ -22,12 +22,12 @@ Route::get('/news/{news:slug}', function (News $news) {
     return view('news-post', ['title' => 'News Post', 'post' => $news]);
 });
 
-Route::get('/authors/{user:name}', function (User $user) {
-    return view('news', ['title' => 'News by '. $user->name, 'news' => $user->news]);
+Route::get('/authors/{user:username}', function (User $user) {
+    return view('news', ['title' => count($user->news) .' News by '. $user->name, 'news' => $user->news]);
 });
 
-Route::get('/category/{category:slug}', function (Category $category) {
-    return view('news', ['title' => 'News Category '. $category->type->value, 'news' => $category->news]);
+Route::get('/categories/{category:slug}', function (Category $category) {
+    return view('news', ['title' => 'News Category in '. $category->type->value, 'news' => $category->news]);
 
 });
 

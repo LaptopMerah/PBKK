@@ -2,11 +2,11 @@
     <x-slot:title>{{ $title }}</x-slot:title>
     <article class="max-w-screen-xl flex flex-col items-center gap-5">
         <img class="max-w-sm rounded-lg" src={{ $post->image }} alt="" />
-        <div class="text-lg py-1 px-2 bg-slate-300 rounded-md">
+        <div class="mb-3 font-normal text-lg py-1 px-2 bg-slate-300 dark:bg-slate-700 rounded-md">
             By
-            <a href="/authors/{{ $post->user->name }}"> {{ $post->user->name }} </a>
+            <a href="/authors/{{ $post->user->username }}" class=" hover:underline text-slate-600 dark:text-slate-200">{{ $post->user->name }}</a>
             in
-            <a href="/category/{{ $post->category->slug }}"> {{ $post->category->type }}</a>
+            <a href="/categories/{{ $post->category->slug }}"  class=" hover:underline text-slate-600 dark:text-slate-200">{{ $post->category->type }}</a>
         </div>
 
         <section class="bg-white border border-gray-200 p-5 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
