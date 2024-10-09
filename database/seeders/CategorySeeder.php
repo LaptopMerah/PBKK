@@ -19,6 +19,7 @@ class CategorySeeder extends Seeder
             Category::factory()->create([
                 'type' => $type->value,
                 'slug' => Str::slug($type->name),
+                'color' => $type->color(),
             ]);
         }
     }

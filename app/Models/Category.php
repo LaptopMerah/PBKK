@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Category extends Model
 {
     use HasFactory;
-    protected $fillable = ['type', 'slug'];
+    protected $fillable = ['type', 'slug', 'color'];
 
     public function news(): HasMany
     {
