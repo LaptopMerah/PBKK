@@ -26,14 +26,14 @@ Route::get('/news/{news:slug}', function (News $news) {
     return view('news-post', ['title' => 'News Post', 'post' => $news]);
 });
 
-Route::get('/authors/{user:username}', function (User $user) {  
-    $news = $user->news->load('user','category');
-    return view('news', ['title' => count($user->news) .' News by '. $user->name, 'news' => $news]);
+Route::get('/authors/{user:username}', function (User $user) {
+    $news = $user->news->load('user', 'category');
+    return view('news', ['title' => count($user->news) . ' News by ' . $user->name, 'news' => $news]);
 });
 
 Route::get('/categories/{category:slug}', function (Category $category) {
-    $news = $category->news->load('user','category');
-    return view('news', ['title' => 'News Category in '. $category->type->value, 'news' => $news]);
+    $news = $category->news->load('user', 'category');
+    return view('news', ['title' => 'News Category in ' . $category->type->value, 'news' => $news]);
 });
 
 Route::get('/contact', function () {

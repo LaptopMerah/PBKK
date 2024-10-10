@@ -1,8 +1,8 @@
 <nav class="bg-white border-gray-200 dark:bg-gray-900">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
-            <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
-            <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+        <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <img src="{{ asset('Logo.png') }}" class="h-8" alt="Flowbite Logo" />
+            <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">LaptopMerah</span>
         </a>
         <div class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
             <button type="button"
@@ -10,15 +10,15 @@
                 id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown"
                 data-dropdown-placement="bottom">
                 <span class="sr-only">Open user menu</span>
-                <img class="w-8 h-8 rounded-full object-cover" src="{{ asset('Profile.JPG') }}"
-                    alt="user photo">
+                <img class="w-8 h-8 rounded-full object-cover" src="{{ asset('Profile.JPG') }}" alt="user photo">
             </button>
             <!-- Dropdown menu -->
             <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
                 id="user-dropdown">
                 <div class="px-4 py-3">
                     <span class="block text-sm text-gray-900 dark:text-white">Iqbal ramadhan</span>
-                    <span class="block text-sm  text-gray-500 truncate dark:text-gray-400">iqbalramadhan18@gmail.com</span>
+                    <span
+                        class="block text-sm  text-gray-500 truncate dark:text-gray-400">iqbalramadhan18@gmail.com</span>
                 </div>
                 <ul class="py-2" aria-labelledby="user-menu-button">
                     <li>
@@ -58,7 +58,6 @@
                 <x-nav-link href="/about" :isActive="request()->is('about')">About</x-nav-link>
                 <x-nav-link href="/news" :isActive="request()->is('news/*')">News</x-nav-link>
                 <x-nav-link href="/contact" :isActive="request()->is('contact')">Contact</x-nav-link>
-                
             </ul>
         </div>
     </div>
