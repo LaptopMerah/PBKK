@@ -17,7 +17,7 @@ Route::get('/about', function () {
 });
 
 Route::get('/news', function () {
-    $news = News::with('user', 'category')->filter(request(['search', 'category']))->latest()->get();
+    $news = News::with('user', 'category')->filter(request(['search', 'category']))->latest()->paginate(9)->withQueryString();
     return view('news', ['title' => 'News', 'news' => $news]);
 });
 

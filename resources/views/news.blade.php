@@ -28,7 +28,9 @@
                     </div>
                 </div>
             </form> 
-            <div class="flex justify-between flex-wrap gap-x-2 gap-y-4 w-full">
+            {{ $news->links() }}
+
+            <div class="flex justify-between flex-wrap gap-x-2 gap-y-4 w-full my-8">
                 @forelse ($news as $post)
                     <article
                         class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
@@ -74,7 +76,6 @@
                     </div>                
                 @endforelse
             </div>
-            
         </div>
       </section>
    
