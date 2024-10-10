@@ -90,10 +90,11 @@ Pemrograman Berbasis Kerangka Kerja (D)<br>
   Membuat data data dummy dengan fitur Factory yang memudahkan kita supaya tidak membuat data satu persatu dari melalui TablePlus ataupun tinker.
 * Eloquent Relationship<br>
   Membuat relasi dari setiap model yang kita punya. Dengan Elogquent memudahkan dalam mengelola dan menggunakan relations.
-* Post Category
+* Post Category<br>
   Membuat Model category untuk posts dengan eleoquent relationship. Dan saya  membuat categorynya dengan Enums.
-* Database Seeder
+* Database Seeder<br>
   Membuat seeder untuk memudahkan untuk membuat dummy data yang tidak menggunakan tinker lagi. Menjadi seperti dibawah:
+      
   ```php
   namespace App;
 
@@ -144,6 +145,49 @@ Pemrograman Berbasis Kerangka Kerja (D)<br>
   </tr>
 </table>
 
+## Pembelajaran Section 6
+* N + 1 Problem<br>
+  Mengatasi querry yang berulang-ulang (N+1) dikarenakan pemanggilan relationship yg dimudahkan dengan eloquent. Dibantu dengan plugin [Debugbar](https://github.com/barryvdh/laravel-debugbar) untuk mengecek segala querry yg 
+* Redesign UI<br>
+  Memperbaiki UI yang dari seblumnya dengan [Flowbite](https://flowbite.com/docs/getting-started/quickstart/)
+* Searching<br>
+  Membuat kolom pencerian untuk mencari news berdasarkan judul/authors yang menjadi si di `/news`.
+* Pagination<br>
+  Membuat halaman agar setiap data yang ditampilakn teratur dan tidak terlalu banyak. Dengan menggunakan paginate dengan withQueryString agar setiap kondisi string bisa terpenuhi.
+
+# Hasil Final Pembelajaran
+<table>
+    <tr>
+        <td align="center" width="100%">
+            <img src="https://github.com/user-attachments/assets/a31cf280-706b-4c2e-bedd-7f0218031678" alt="Home Page" style="width: 100%;">
+            <p>Home Page</p>
+        </td>
+  </tr>
+  <tr>
+      <td align="center" width="100%">
+          <img src="https://github.com/user-attachments/assets/94eb9a96-1e25-49a6-875b-38268116e9f7" alt="About Page" style="width: 100%;">
+          <p>About Page</p>
+      </td>
+  </tr>
+  <tr>
+      <td align="center" width="100%">
+          <img src="https://github.com/user-attachments/assets/b790d3df-d95b-4917-8d8c-e081ab853d33" alt="News Page" style="width: 100%;">
+          <p>News Page</p>
+      </td>
+  </tr>
+  <tr>
+      <td align="center" width="100%">
+          <img src="https://github.com/user-attachments/assets/e943926f-3162-4894-a9cf-d7cb5189c6d4" alt="News Detail Page" style="width: 100%;">
+          <p>News Detail Page</p>
+      </td>
+  </tr>
+  <tr>
+      <td align="center" width="100%">
+          <img src="https://github.com/user-attachments/assets/82918d67-ef14-4bff-b31d-43785b214c14" alt="Contact Page" style="width: 100%;">
+          <p>Contact Page</p>
+      </td>
+  </tr>
+</table>
 
 ## License
 
