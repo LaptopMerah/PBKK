@@ -17,12 +17,12 @@ Route::get('/about', function () {
 });
 
 Route::get('/news', function () {
-    $news = News::with('user', 'category')->latest()->get();
+    $news = News::with('user', 'category')->filter(request(['search', 'category']))->latest()->get();
     return view('news', ['title' => 'News', 'news' => $news]);
 });
 
 Route::get('/news/{news:slug}', function (News $news) {
-    $news->load(['user', 'category']);
+    $news->load(['user', 'category', 'authors']);
     return view('news-post', ['title' => 'News Post', 'post' => $news]);
 });
 

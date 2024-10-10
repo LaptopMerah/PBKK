@@ -3,13 +3,13 @@
     <article class="max-w-screen-xl flex flex-col items-center gap-5">
         <img class="max-w-sm rounded-lg" src={{ $post->image }} alt="" />
         <div class="flex justify-between items-center min-w-full">
-            <a href="/authors/{{ $post->user->username }}"  class="flex items-center space-x-4 hover:underline">
+            <a href="/news?authors={{ $post->user->username }}"  class="flex items-center space-x-4 hover:underline">
                 <img class="w-7 h-7 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png" alt="Jese Leos avatar" />
                 <span class="font-medium dark:text-white">
                     {{ $post->user->name }}
                 </span>
             </a>
-            <a href="/categories/{{ $post->category->slug }}" class="bg-{{ $post->category->color }}-100 text-primary-800 text-lg font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800 hover:underline">
+            <a href="/news?category={{ $post->category->slug }}" class="bg-{{ $post->category->color }}-100 text-primary-800 text-lg font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800 hover:underline">
                 {{ $post->category->type }}
             </a>
         </div>
